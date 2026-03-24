@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { Route } from "next";
 import { usePathname } from "next/navigation";
 import {
   FireIcon,
@@ -16,7 +17,11 @@ const navItems = [
   { href: "/", label: "Feed", icon: HomeIcon },
   { href: "/heatmap", label: "Heatmap", icon: Squares2X2Icon },
   { href: "/profile", label: "Profile", icon: UserCircleIcon }
-];
+] as const satisfies ReadonlyArray<{
+  href: Route;
+  label: string;
+  icon: typeof HomeIcon;
+}>;
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
