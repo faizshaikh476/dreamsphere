@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-bg bg-haze text-text antialiased;
+  min-height: 100vh;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #21344F transparent;
+}
+
+.glass-panel {
+  @apply rounded-3xl border border-border bg-panel/90 shadow-glow backdrop-blur;
+}
+
+.input-base {
+  @apply w-full rounded-2xl border border-border bg-panelSoft px-4 py-3 text-sm text-text outline-none transition placeholder:text-muted focus:border-accent;
+}
+
+.button-primary {
+  @apply inline-flex items-center justify-center rounded-2xl bg-accent px-4 py-3 text-sm font-semibold text-slate-900 transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60;
+}
+
+.button-secondary {
+  @apply inline-flex items-center justify-center rounded-2xl border border-border bg-panelSoft px-4 py-3 text-sm font-medium text-text transition hover:border-accent;
+}
