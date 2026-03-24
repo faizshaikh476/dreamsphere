@@ -9,8 +9,10 @@ type Toast = {
   tone?: "default" | "error";
 };
 
-const ToastContext = createContext({
-  showToast: (_title: string, _tone?: "default" | "error") => undefined
+const ToastContext = createContext<{
+  showToast: (title: string, tone?: "default" | "error") => void;
+}>({
+  showToast: () => undefined
 });
 
 export function ToastProvider({ children }: { children: React.ReactNode }) {
